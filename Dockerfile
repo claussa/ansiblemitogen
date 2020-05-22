@@ -1,7 +1,13 @@
 FROM python:3.6-alpine
 MAINTAINER arnaud.clauss78@gmail.com
 
-RUN apk --no-cache add git
+RUN apk --no-cache add \
+        git \
+        openssl \
+        ca-certificates \
+        sshpass \
+        openssh-client \
+        rsync
 
 RUN apk --no-cache add --virtual build-dependencies \
         python3-dev \
